@@ -6,7 +6,7 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-name: bia-application-load-balancer
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: instance
-    alb.ingress.kubernetes.io/subnets: subnet-034c2e9f99e545878,subnet-089cbc2709b8dc5dc
+    alb.ingress.kubernetes.io/subnets: subnet-03dacd56a7563ad48,subnet-0c24a50fb975ce8ee
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-policy: ELBSecurityPolicy-2016-08
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:976808777516:certificate/a5368b26-d5e7-4606-93bb-b7d764c5575c
@@ -16,6 +16,13 @@ spec:
   rules:
   - http:
       paths:
+      - path: /argocd
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
       - path: /
         pathType: Prefix
         backend:
