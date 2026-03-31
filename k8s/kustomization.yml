@@ -10,4 +10,4 @@ resources:
 images:
 - name: 976808777516.dkr.ecr.us-east-1.amazonaws.com/bia
   newName: 976808777516.dkr.ecr.us-east-1.amazonaws.com/bia
-  newTag: a61313f781f79cb7ce73cde4799c643bb8abbd0b
+  newTag: 2973aa8290a80733bf5b99a7cc8eb82f8691c3a5
